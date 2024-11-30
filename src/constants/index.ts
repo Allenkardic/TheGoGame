@@ -1,0 +1,1 @@
+export {scaledSize} from './scaledSize';

@@ -1,0 +1,18 @@
+import {Dimensions} from 'react-native';
+
+const IS_SMALL_SCREEN = Dimensions.get('window').width <= 320;
+
+const BUTTON_SIZE = IS_SMALL_SCREEN ? 48 : 60;
+
+export default {
+  DEFAULT_CARD_BOTTOM_MARGIN: 32,
+  INPUT_BORDER_RADIUS: 12,
+  SEARCH_INPUT_HEIGHT: 44,
+  INPUT_HEIGHT: 50,
+  INPUT_BORDER_WIDTH: 1.5,
+  INPUT_FONT_SIZE: 14,
+  BUTTON_SIZE: IS_SMALL_SCREEN ? 48 : 60,
+  BUTTON_BORDER_RADIUS: BUTTON_SIZE * 0.5,
+  BUTTON_FONT_SIZE: 16,
+  BUTTON_LINE_HEIGHT: 24,
+};

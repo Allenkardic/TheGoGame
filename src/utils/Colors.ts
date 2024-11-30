@@ -57,6 +57,8 @@ export default {
   green: GREEN,
   inputBorderVarientOne: 'rgba(12, 9, 50, 0.14)',
   primaryVariantOne: 'rgba(255, 255, 255, 0.2)',
+  placeholder: '#BDBDBD',
+  inputLabelText: '#1B1C20',
 };
 
 // #F8F9FF
