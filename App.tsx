@@ -14,10 +14,12 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
+  // Text,
   useColorScheme,
   View,
 } from 'react-native';
+
+import {Text} from './src/components';
 
 import {
   Colors,
@@ -67,11 +69,11 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <Text style={{color: 'red', fontFamily: 'Inter-Bold'}}>hello</Text>
-      <Text style={{color: 'red', fontFamily: 'Inter-Bold'}}>hello</Text>
-      <Text style={{color: 'red', fontFamily: 'Inter-Bold'}}>hello</Text>
-      <Text style={{color: 'red', fontFamily: 'Inter-Bold'}}>hello</Text>
-      <Text style={{color: 'red', fontFamily: 'Inter-Thin'}}>hello</Text>
+      <Text fontSize="xlarge">hello</Text>
+      <Text>hello</Text>
+      <Text>hello</Text>
+      <Text>hello</Text>
+      <Text>hello</Text>
 
       <Icon name="activity" />
     </SafeAreaView>
