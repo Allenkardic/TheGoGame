@@ -1,5 +1,5 @@
 import Icon from 'react-native-vector-icons/Feather';
-import {Pressable, StyleSheet} from 'react-native';
+import {Pressable, StyleSheet, Platform} from 'react-native';
 import {Spacing, Colors} from '../../utils';
 import {AddIconProps} from './interfaces';
 
@@ -19,6 +19,15 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.success,
     alignItems: 'center',
     justifyContent: 'center',
+    elevation: 5,
+    shadowColor:
+      Platform.OS === 'android' ? 'grey' : 'rgba(236, 224, 248, 0.5)',
+    shadowOffset: {
+      width: 2,
+      height: 2,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 3.84,
   },
 });
 
