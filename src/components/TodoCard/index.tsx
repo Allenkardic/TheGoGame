@@ -38,16 +38,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.xxxsmall,
     paddingVertical: Spacing.xxsmall,
     borderRadius: Sizes.INPUT_BORDER_RADIUS,
-    elevation: 5,
-    shadowColor:
-      Platform.OS === 'android' ? 'grey' : 'rgba(236, 224, 248, 0.5)',
-
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 3.84,
     marginBottom: Spacing.xxsmall,
     marginHorizontal: Spacing.xxsmall,
   },

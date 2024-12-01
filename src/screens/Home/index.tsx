@@ -16,7 +16,7 @@ const data = [
   {id: '6', title: 'My name 6', body: 'Body one one', date: '10 Nov 2022'},
   {id: '7', title: 'My name 6', body: 'Body one one', date: '10 Nov 2022'},
   {id: '8', title: 'My name 6', body: 'Body one one', date: '10 Nov 2022'},
-  {id: '9', title: 'My name 6', body: 'Body one one', date: '10 Nov 2022'},
+  {id: '9', title: 'My name 9', body: 'Body one one', date: '10 Nov 2022'},
 ];
 
 const {ADDTODO} = Routes.stack;
