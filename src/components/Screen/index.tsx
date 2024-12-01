@@ -81,14 +81,12 @@ const Screen: IScreenProps = function Screen({
     [
       isFocused,
       props.backgroundColor,
-
       setBarStyle,
       setStatusBarBackgroundColor,
       statusbarStyle,
     ],
   );
 
-  console.log(screenPadding, 'screenPadding');
   return (
     <>
       {noKeyboardAvoidingView ? (
@@ -103,10 +101,10 @@ const Screen: IScreenProps = function Screen({
           <View
             style={{
               paddingHorizontal: screenPadding ? Spacing.xsmall : 0,
+              flex: 1,
             }}>
             {children}
           </View>
-          <Text>hhhh</Text>
         </SafeAreaView>
       ) : (
         <KeyboardAvoidingView
