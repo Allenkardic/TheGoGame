@@ -1,13 +1,16 @@
 import {View, Text} from 'react-native';
+import {Screen} from '../../components';
 
 function Home() {
   return (
-    <View>
-      <Text>Homme</Text>
-      <Text>Homme</Text>
-      <Text>Homme</Text>
-      <Text>Homme</Text>
-    </View>
+    <Screen noKeyboardAvoidingView>
+      <View>
+        <Text>Homme</Text>
+        <Text>Homme</Text>
+        <Text>Homme</Text>
+        <Text>Homme</Text>
+      </View>
+    </Screen>
   );
 }
 

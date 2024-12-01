@@ -22,6 +22,7 @@ const GREEN = '#139E5C';
 const GRAYALTERNATE = '#AEAEB6';
 
 export default {
+  background: '#ffffff',
   tintColor,
   white: WHITE,
   tabIconSelected: PRIMARY_COLOR,

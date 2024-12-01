@@ -1,9 +1,8 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import stack from '../utils';
-import {useTheme} from '../providers/ThemeProvider/ThemeContext';
+import {Routes, Colors} from '../utils';
 import {Home, AddTodo, UpdateTodo} from '../screens';
-import {HeaderTitle, LeftNavigationIcon} from '../components';
+import {Text, LeftNavigationIcon} from '../components';
 import {TextProps} from '../components/Typography/interfaces';
 
 const Stack = createNativeStackNavigator();
@@ -23,23 +22,11 @@ const renderHeaderTitle = (
     | null
     | undefined,
 ) => {
-  return <HeaderTitle {...props}>{title}</HeaderTitle>;
+  return <Text {...props}>{title}</Text>;
 };
 
 const HomeStack = () => {
-  const {themeColors} = useTheme();
-
-  const {
-    HOME,
-    TIER2ACCOUNTUPGRADE,
-    SETTINGS,
-    SENDMONEYAMOUNT,
-    SENDMONEYRECIPIENTDETAILS,
-    SENDMONEYREVIEW,
-    SWAPMONEYAMOUNT,
-    SWAPMONEYDETAILS,
-    SWAPMONEYSUCCESS,
-  } = stack.stack;
+  const {HOME, ADDTODO, UPDATETODO} = Routes.stack;
 
   return (
     <Stack.Navigator
@@ -48,7 +35,7 @@ const HomeStack = () => {
         headerShown: false,
         headerShadowVisible: false,
         headerStyle: {
-          backgroundColor: themeColors.background,
+          backgroundColor: Colors.background,
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -59,80 +46,25 @@ const HomeStack = () => {
         name={HOME}
         component={Home}
         options={({navigation}) => ({
-          headerShown: false,
+          headerShown: true,
           headerTitle: props => renderHeaderTitle(props, 'Home'),
-          headerLeft: () => renderLeftNavigationIcon(navigation),
         })}
       />
       <Stack.Screen
-        name={TIER2ACCOUNTUPGRADE}
-        component={Tier2AccountUpgrade}
-        options={({navigation}) => ({
-          headerShown: false,
-          headerTitle: props => renderHeaderTitle(props, 'Home'),
-          headerLeft: () => renderLeftNavigationIcon(navigation),
-        })}
-      />
-      <Stack.Screen
-        name={SETTINGS}
-        component={Settings}
+        name={ADDTODO}
+        component={AddTodo}
         options={({navigation}) => ({
           headerShown: true,
-          headerTitle: props => renderHeaderTitle(props, 'Settings'),
+          headerTitle: props => renderHeaderTitle(props, 'Add Todo'),
           headerLeft: () => renderLeftNavigationIcon(navigation),
         })}
       />
       <Stack.Screen
-        name={SENDMONEYAMOUNT}
-        component={SendMoneyAmount}
+        name={UPDATETODO}
+        component={UpdateTodo}
         options={({navigation}) => ({
           headerShown: true,
-          headerTitle: props => renderHeaderTitle(props, 'Send Money'),
-          headerLeft: () => renderLeftNavigationIcon(navigation),
-        })}
-      />
-      <Stack.Screen
-        name={SENDMONEYRECIPIENTDETAILS}
-        component={SendMoneyRecipientDetails}
-        options={({navigation}) => ({
-          headerShown: true,
-          headerTitle: props => renderHeaderTitle(props, 'Send Money'),
-          headerLeft: () => renderLeftNavigationIcon(navigation),
-        })}
-      />
-      <Stack.Screen
-        name={SENDMONEYREVIEW}
-        component={SendMoneyReview}
-        options={({navigation}) => ({
-          headerShown: true,
-          headerTitle: props => renderHeaderTitle(props, 'Send Money'),
-          headerLeft: () => renderLeftNavigationIcon(navigation),
-        })}
-      />
-      <Stack.Screen
-        name={SWAPMONEYAMOUNT}
-        component={SwapMoneyAmount}
-        options={({navigation}) => ({
-          headerShown: true,
-          headerTitle: props => renderHeaderTitle(props, 'Swap Money'),
-          headerLeft: () => renderLeftNavigationIcon(navigation),
-        })}
-      />
-      <Stack.Screen
-        name={SWAPMONEYDETAILS}
-        component={SwapMoneyDetails}
-        options={({navigation}) => ({
-          headerShown: true,
-          headerTitle: props => renderHeaderTitle(props, 'Swap Money'),
-          headerLeft: () => renderLeftNavigationIcon(navigation),
-        })}
-      />
-      <Stack.Screen
-        name={SWAPMONEYSUCCESS}
-        component={SwapMoneySuccess}
-        options={({navigation}) => ({
-          headerShown: true,
-          headerTitle: props => renderHeaderTitle(props, 'Swap Money'),
+          headerTitle: props => renderHeaderTitle(props, 'UPDATE TODO'),
           headerLeft: () => renderLeftNavigationIcon(navigation),
         })}
       />
