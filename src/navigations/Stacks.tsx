@@ -4,8 +4,9 @@ import {Routes, Colors} from '../utils';
 import {Home, AddTodo, UpdateTodo} from '../screens';
 import {Text, LeftNavigationIcon} from '../components';
 import {TextProps} from '../components/Typography/interfaces';
+import {RootStackParamList} from './interfaces';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const renderLeftNavigationIcon = (navigation: {goBack: () => void}) => {
   return <LeftNavigationIcon onPress={() => navigation.goBack()} />;

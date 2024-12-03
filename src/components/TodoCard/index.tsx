@@ -1,11 +1,17 @@
 import {memo} from 'react';
-import {View, StyleSheet, Platform} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Text from '../Typography';
 import {ToDoCardProps} from './interfaces';
 import Icon from 'react-native-vector-icons/Feather';
 import {Colors, Spacing, Sizes} from '../../utils';
 
-function TodoCard({title, body, date, onPress}: ToDoCardProps) {
+function TodoCard({
+  title,
+  body,
+  date,
+  onPressEdit,
+  onPressDelete,
+}: ToDoCardProps) {
   return (
     <View style={styles.container}>
       <Text fontSize="large" weight="medium">
@@ -18,13 +24,22 @@ function TodoCard({title, body, date, onPress}: ToDoCardProps) {
         <Text color="lightText" fontSize="small">
           {date}
         </Text>
-        <Icon
-          style={styles.icon}
-          name="edit-3"
-          color={Colors.green}
-          onPress={onPress}
-          size={20}
-        />
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Icon
+            style={styles.icon}
+            name="edit-3"
+            color={Colors.green}
+            onPress={onPressEdit}
+            size={20}
+          />
+          <Icon
+            style={[styles.icon, styles.deleteIcon]}
+            name="trash-2"
+            color={Colors.danger}
+            onPress={onPressDelete}
+            size={20}
+          />
+        </View>
       </View>
     </View>
   );
@@ -53,6 +68,9 @@ const styles = StyleSheet.create({
   },
   icon: {
     alignSelf: 'flex-end',
+  },
+  deleteIcon: {
+    marginLeft: Spacing.xxsmall,
   },
 });
 

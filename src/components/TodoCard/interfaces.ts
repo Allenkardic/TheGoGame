@@ -5,5 +5,6 @@ export interface ToDoCardProps {
   title: string;
   body: string;
   date: string;
-  onPress?: (event: GestureResponderEvent) => void;
+  onPressEdit?: (event: GestureResponderEvent) => void;
+  onPressDelete?: (event: GestureResponderEvent) => void;
 }

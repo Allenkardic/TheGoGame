@@ -16,9 +16,9 @@ const Button: IButtonProps = function Button({
   style,
 }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Pressable
-        style={[styles.button, style]}
+        style={[styles.button]}
         onPress={onPress}
         disabled={isSubmitting || false}>
         {isSubmitting ? (

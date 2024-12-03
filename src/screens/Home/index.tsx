@@ -1,4 +1,4 @@
-import {View, Text, FlatList, Pressable, StyleSheet} from 'react-native';
+import {View, Text, FlatList, Pressable, StyleSheet, Alert} from 'react-native';
 import {
   useNavigation,
   NavigationProp,
@@ -6,6 +6,7 @@ import {
 } from '@react-navigation/native';
 import {Screen, TodoCard, AddIcon, EmptyList} from '../../components';
 import {Routes, Spacing} from '../../utils';
+import {ToDoCardProps} from '../../components/TodoCard/interfaces';
 
 const data = [
   {id: '1', title: 'My name', body: 'Body one one', date: '10 Nov 2022'},
@@ -19,7 +20,7 @@ const data = [
   {id: '9', title: 'My name 9', body: 'Body one one', date: '10 Nov 2022'},
 ];
 
-const {ADDTODO} = Routes.stack;
+const {ADDTODO, UPDATETODO} = Routes.stack;
 
 function Home() {
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
@@ -27,6 +28,27 @@ function Home() {
   const handleAddTodo = () => {
     navigation.navigate(ADDTODO);
   };
+
+  const handleUpdateTodo = (item: ToDoCardProps) => {
+    console.log(item, 'items');
+    navigation.navigate(UPDATETODO, {item});
+  };
+
+  const handleDeleteTodo = (item: ToDoCardProps) => {
+    Alert.alert(
+      'Comfirm delete todo',
+      'Please confirm if you want to delete this todo',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => {},
+          style: 'cancel',
+        },
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+    );
+  };
+
   return (
     <Screen noKeyboardAvoidingView>
       <FlatList
@@ -37,8 +59,11 @@ function Home() {
             <TodoCard
               title={title}
               body={body}
-              onPress={() => {
-                console.log('hello');
+              onPressDelete={() => {
+                handleDeleteTodo(item);
+              }}
+              onPressEdit={() => {
+                handleUpdateTodo(item);
               }}
               date={date}
             />
@@ -49,7 +74,7 @@ function Home() {
             <EmptyList text="Click on the plus icon to create a new todo" />
           );
         }}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id.toString()}
       />
       <AddIcon onPress={handleAddTodo} style={styles.addIcon} />
     </Screen>
