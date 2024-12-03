@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {View, Text} from 'react-native';
-import {Input} from '../../components';
+import {Input, Button} from '../../components';
 
 function AddTodo() {
   const [nameValue, setNameValue] = useState('');
@@ -22,6 +22,13 @@ function AddTodo() {
         // error={errors?.firstName}
         autoCapitalize="none"
         // touched={touched?.firstName}
+      />
+
+      <Button
+        text="add"
+        onPress={() => {
+          console.log('hello');
+        }}
       />
     </View>
   );
