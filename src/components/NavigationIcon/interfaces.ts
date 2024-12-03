@@ -1,6 +1,6 @@
 import {GestureResponderEvent} from 'react-native';
 
-export interface LeftNavigationIconProps {
+export interface NavigationIconProps {
   onPress: (event: GestureResponderEvent) => void;
   name?: string;
 }

@@ -2,14 +2,18 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Routes, Colors} from '../utils';
 import {Home, AddTodo, UpdateTodo, Onboarding} from '../screens';
-import {Text, LeftNavigationIcon} from '../components';
+import {Text, NavigationIcon} from '../components';
 import {TextProps} from '../components/Typography/interfaces';
 import {RootStackParamList} from './interfaces';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const renderLeftNavigationIcon = (navigation: {goBack: () => void}) => {
-  return <LeftNavigationIcon onPress={() => navigation.goBack()} />;
+  return <NavigationIcon onPress={() => navigation.goBack()} />;
+};
+
+const renderLogoutNavigationIcon = (navigation: {goBack: () => void}) => {
+  return <NavigationIcon name="power" onPress={() => navigation.goBack()} />;
 };
 
 const renderHeaderTitle = (
@@ -57,6 +61,7 @@ const HomeStack = () => {
         options={({navigation}) => ({
           headerShown: true,
           headerTitle: props => renderHeaderTitle(props, 'Home'),
+          headerRight: () => renderLogoutNavigationIcon(navigation),
         })}
       />
       <Stack.Screen
