@@ -5,6 +5,7 @@ const Routes: {stack: {[K in keyof RootStackParamList]: K}} = {
     HOME: 'HOME',
     ADDTODO: 'ADDTODO',
     UPDATETODO: 'UPDATETODO',
+    ONBOARDING: 'ONBOARDING',
   },
 };
 

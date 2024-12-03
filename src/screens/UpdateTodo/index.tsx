@@ -13,7 +13,6 @@ function UpdateTodo() {
 
   const route = useRoute<UpdateTodoRouteProp>();
   const {item: navParams} = route.params;
-  console.log(navParams, 'routes');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const schema = yup.object().shape({
@@ -31,7 +30,9 @@ function UpdateTodo() {
           }}
           validationSchema={schema}
           // enableReinitialize={true}
-          onSubmit={async values => {}}>
+          onSubmit={async values => {
+            navigation.navigate(ADDTODO);
+          }}>
           {formikProps => {
             const {handleChange, touched, values, handleSubmit, errors} =
               formikProps;

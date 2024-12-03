@@ -1,7 +1,7 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Routes, Colors} from '../utils';
-import {Home, AddTodo, UpdateTodo} from '../screens';
+import {Home, AddTodo, UpdateTodo, Onboarding} from '../screens';
 import {Text, LeftNavigationIcon} from '../components';
 import {TextProps} from '../components/Typography/interfaces';
 import {RootStackParamList} from './interfaces';
@@ -27,11 +27,11 @@ const renderHeaderTitle = (
 };
 
 const HomeStack = () => {
-  const {HOME, ADDTODO, UPDATETODO} = Routes.stack;
+  const {HOME, ADDTODO, UPDATETODO, ONBOARDING} = Routes.stack;
 
   return (
     <Stack.Navigator
-      initialRouteName={HOME}
+      initialRouteName={ONBOARDING}
       screenOptions={{
         headerShown: false,
         headerShadowVisible: false,
@@ -43,6 +43,14 @@ const HomeStack = () => {
           fontWeight: 'bold',
         },
       }}>
+      <Stack.Screen
+        name={ONBOARDING}
+        component={Onboarding}
+        options={({navigation}) => ({
+          headerShown: true,
+          headerTitle: props => renderHeaderTitle(props, 'Onboarding'),
+        })}
+      />
       <Stack.Screen
         name={HOME}
         component={Home}
