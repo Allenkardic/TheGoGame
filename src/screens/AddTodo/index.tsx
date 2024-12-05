@@ -4,9 +4,10 @@ import * as yup from 'yup';
 import {Formik} from 'formik';
 import {Input, Button, Screen} from '../../components';
 import {Spacing} from '../../utils';
+import {useCreateTodo} from '../../hooks/useTodoApi';
 
 function AddTodo() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const {createTodoApi, loading} = useCreateTodo();
 
   const schema = yup.object().shape({
     title: yup.string().required('Title is required'),
@@ -23,7 +24,9 @@ function AddTodo() {
           }}
           validationSchema={schema}
           // enableReinitialize={true}
-          onSubmit={async values => {}}>
+          onSubmit={async values => {
+            await createTodoApi(values);
+          }}>
           {formikProps => {
             const {handleChange, touched, values, handleSubmit, errors} =
               formikProps;
@@ -55,7 +58,7 @@ function AddTodo() {
                 <Button
                   text="Create Todo"
                   onPress={() => handleSubmit()}
-                  isSubmitting={isSubmitting}
+                  isSubmitting={loading}
                 />
               </>
             );

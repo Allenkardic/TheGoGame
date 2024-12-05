@@ -1,12 +1,15 @@
+import {useEffect} from 'react';
 import {View, Text, FlatList, Pressable, StyleSheet, Alert} from 'react-native';
 import {
   useNavigation,
   NavigationProp,
   ParamListBase,
 } from '@react-navigation/native';
+import api from '../../api';
 import {Screen, TodoCard, AddIcon, EmptyList} from '../../components';
 import {Routes, Spacing} from '../../utils';
 import {ToDoCardProps} from '../../components/TodoCard/interfaces';
+import {asyncGet} from '../../utils';
 
 const data = [
   {id: '1', title: 'My name', body: 'Body one one', date: '10 Nov 2022'},
@@ -23,6 +26,7 @@ const data = [
 const {ADDTODO, UPDATETODO} = Routes.stack;
 
 function Home() {
+  useEffect(() => {}, []);
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
   const handleAddTodo = () => {
@@ -34,7 +38,9 @@ function Home() {
     navigation.navigate(UPDATETODO, {item});
   };
 
-  const handleDeleteTodo = (item: ToDoCardProps) => {
+  const handleDeleteTodo = async (item: ToDoCardProps) => {
+    const mydata = await asyncGet('username');
+    console.log(mydata, 'jj');
     Alert.alert(
       'Comfirm delete todo',
       'Please confirm if you want to delete this todo',
