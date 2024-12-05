@@ -1,19 +1,39 @@
 import {useEffect, useState} from 'react';
 import Toast from 'react-native-toast-message';
 import api from '../../api';
-import {ITodo} from '../../components/TodoCard/interfaces';
+import {
+  ITodo,
+  ITodoAPI,
+  ToDoCardProps,
+} from '../../components/TodoCard/interfaces';
 const useGetTodo = () => {
   const [loading, setLoading] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [error, setError] = useState<unknown>(null);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<ToDoCardProps[]>([]);
   const getTodoApi = async () => {
     setLoading(true);
     try {
       const response = await api.get('todo');
-      setData(response.data);
+
+      let updatedResponse: ToDoCardProps[] = [];
+
+      if (response) {
+        response.data.forEach((item: ITodoAPI) => {
+          const {title, body, createdAt, _id} = item;
+          return updatedResponse.push({
+            title,
+            body,
+            id: _id,
+            date: createdAt,
+          });
+        });
+      }
+
+      setData(updatedResponse);
+      setIsSuccessful(true);
       return Promise.resolve({
-        data: response,
+        data: updatedResponse,
       });
     } catch (e) {
       if (typeof e === 'string') {

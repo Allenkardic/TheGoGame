@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import {Colors, Spacing, Sizes} from '../../utils';
 
 function TodoCard({
+  id,
   title,
   body,
   date,
