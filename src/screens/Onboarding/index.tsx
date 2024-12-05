@@ -8,7 +8,8 @@ import {
   ParamListBase,
 } from '@react-navigation/native';
 import {Input, Button, Screen} from '../../components';
-import {Spacing, Routes} from '../../utils';
+import {Spacing, Routes, asyncStore} from '../../utils';
+import {setUserName} from '../../api';
 
 const {HOME} = Routes.stack;
 
@@ -34,7 +35,18 @@ function Onboarding() {
           validationSchema={schema}
           // enableReinitialize={true}
           onSubmit={async values => {
-            navigation.navigate(HOME);
+            const {userName} = values;
+            try {
+              setUserName(userName);
+              await asyncStore('username', userName);
+              navigation.navigate(HOME);
+            } catch (e) {
+              if (e instanceof Error) {
+                throw new Error(e.message);
+              } else {
+                throw new Error('An unknown error occurred'); // Handle non-Error cases
+              }
+            }
           }}>
           {formikProps => {
             const {handleChange, touched, values, handleSubmit, errors} =
