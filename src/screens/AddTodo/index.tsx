@@ -1,12 +1,18 @@
-import {useState} from 'react';
-import {View, ScrollView, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import * as yup from 'yup';
 import {Formik} from 'formik';
+import {
+  useNavigation,
+  NavigationProp,
+  ParamListBase,
+} from '@react-navigation/native';
 import {Input, Button, Screen} from '../../components';
 import {Spacing} from '../../utils';
 import {useCreateTodo} from '../../hooks/useTodoApi';
 
 function AddTodo() {
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
+
   const {createTodoApi, loading} = useCreateTodo();
 
   const schema = yup.object().shape({
@@ -25,7 +31,10 @@ function AddTodo() {
           validationSchema={schema}
           // enableReinitialize={true}
           onSubmit={async values => {
-            await createTodoApi(values);
+            const response = await createTodoApi(values);
+            if (response) {
+              navigation.goBack();
+            }
           }}>
           {formikProps => {
             const {handleChange, touched, values, handleSubmit, errors} =

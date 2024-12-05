@@ -1,5 +1,7 @@
 import {useEffect, useState} from 'react';
+import Toast from 'react-native-toast-message';
 import api from '../../api';
+import {ITodo} from '../../components/TodoCard/interfaces';
 const useGetTodo = () => {
   const [loading, setLoading] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -65,7 +67,7 @@ const useUpdateTodo = () => {
   const [error, setError] = useState<unknown>(null);
   const [data, setData] = useState('');
 
-  const updateTodoApi = async (id: string, payload: any) => {
+  const updateTodoApi = async (id: string, payload: ITodo) => {
     setLoading(true);
 
     try {
@@ -91,18 +93,27 @@ const useUpdateTodo = () => {
   return {loading, isSuccessful, error, data, updateTodoApi};
 };
 
+// CREATE TODO API
 const useCreateTodo = () => {
   const [loading, setLoading] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [error, setError] = useState<unknown>(null);
   const [data, setData] = useState({});
 
-  const createTodoApi = async (payload: any) => {
+  const createTodoApi = async (payload: ITodo) => {
     setLoading(true);
     try {
       const response = await api.post(`todo`, payload);
       setData(response.data);
       setIsSuccessful(true);
+      setTimeout(() => {
+        Toast.show({
+          type: 'success',
+          autoHide: true,
+          text1: 'Todo created successfully',
+          text2: 'Your data was saved successfully',
+        });
+      }, 1000);
       return Promise.resolve({
         data: response,
       });
