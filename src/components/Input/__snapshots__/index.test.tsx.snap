@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component renders correctly with default props 1`] = `
+<View
+  style={
+    [
+      undefined,
+      {
+        "marginBottom": 48,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "borderRadius": 12,
+          "elevation": 5,
+          "shadowColor": "rgba(236, 224, 248, 0.5)",
+          "shadowOffset": {
+            "height": 2,
+            "width": 2,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 3.84,
+        },
+        {
+          "backgroundColor": "#FFFFFF",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      collapsable={false}
+      jestAnimatedStyle={
+        {
+          "value": {},
+        }
+      }
+      jestInlineStyle={
+        [
+          {
+            "alignItems": "center",
+            "borderColor": "#fdfdfd",
+            "borderRadius": 12,
+            "borderWidth": 1.5,
+            "flexDirection": "row",
+            "minHeight": 50,
+            "paddingHorizontal": 16,
+          },
+          false,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      style={
+        {
+          "alignItems": "center",
+          "borderColor": "#fdfdfd",
+          "borderRadius": 12,
+          "borderWidth": 1.5,
+          "flexDirection": "row",
+          "minHeight": 50,
+          "paddingHorizontal": 16,
+        }
+      }
+    >
+      <TextInput
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholderTextColor="#BDBDBD"
+        secureTextEntry={false}
+        style={
+          [
+            {
+              "backgroundColor": "rgba(0,0,0,0)",
+              "borderWidth": 0,
+              "flex": 1,
+              "fontFamily": "Inter-Regular",
+              "fontSize": 14,
+              "lineHeight": 18,
+              "minHeight": 50,
+              "paddingBottom": 0,
+              "paddingTop": 0,
+            },
+            undefined,
+            {},
+            null,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="rgba(0,0,0,0)"
+        value="test"
+      />
+    </View>
+  </View>
+</View>
+`;

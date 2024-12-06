@@ -6,7 +6,10 @@ import {AddIconProps} from './interfaces';
 
 function AddIcon({onPress, style}: AddIconProps) {
   return (
-    <Pressable style={[styles.container, style]} onPress={onPress}>
+    <Pressable
+      testID="add-icon"
+      style={[styles.container, style]}
+      onPress={onPress}>
       <Icon name="plus" size={25} color={Colors.white} />
     </Pressable>
   );

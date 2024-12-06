@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyList Component renders correctly with given text 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Image
+    source={
+      {
+        "testUri": "../../../assets/images/list.png",
+      }
+    }
+    style={
+      {
+        "height": 100,
+        "marginBottom": 64,
+        "marginTop": 96,
+        "width": 100,
+      }
+    }
+  />
+  <Text
+    style={
+      [
+        {
+          "fontFamily": "Inter-Regular",
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        {
+          "color": "#6D6E71",
+        },
+        undefined,
+        null,
+        {
+          "fontSize": 14,
+          "lineHeight": 21,
+        },
+      ]
+    }
+  >
+    No items available
+  </Text>
+</View>
+`;

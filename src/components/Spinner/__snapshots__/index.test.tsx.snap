@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner Component renders correctly with default props 1`] = `
+<ActivityIndicator
+  color="#0C0932"
+  size="small"
+  style={
+    [
+      {
+        "marginBottom": -4,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

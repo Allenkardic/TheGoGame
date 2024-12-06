@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Component renders with combined styles 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Inter-Regular",
+        "fontSize": 16,
+        "lineHeight": 24,
+      },
+      {
+        "color": "#d5d8d9",
+      },
+      undefined,
+      {
+        "fontFamily": "Inter-Medium",
+      },
+      {
+        "fontSize": 14,
+        "lineHeight": 21,
+      },
+    ]
+  }
+>
+  Styled text
+</Text>
+`;
+
+exports[`Text Component renders with default style 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Inter-Regular",
+        "fontSize": 16,
+        "lineHeight": 24,
+      },
+      {
+        "color": "#010a1a",
+      },
+      undefined,
+      null,
+      null,
+    ]
+  }
+>
+  Default text
+</Text>
+`;
+
+exports[`Text Component renders with specified color 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Inter-Regular",
+        "fontSize": 16,
+        "lineHeight": 24,
+      },
+      {
+        "color": "#0C0932",
+      },
+      undefined,
+      null,
+      null,
+    ]
+  }
+>
+  Primary text
+</Text>
+`;
+
+exports[`Text Component renders with specified font size 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Inter-Regular",
+        "fontSize": 16,
+        "lineHeight": 24,
+      },
+      {
+        "color": "#010a1a",
+      },
+      undefined,
+      null,
+      {
+        "fontSize": 18,
+        "lineHeight": 24,
+      },
+    ]
+  }
+>
+  Large text
+</Text>
+`;
+
+exports[`Text Component renders with specified font weight 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Inter-Regular",
+        "fontSize": 16,
+        "lineHeight": 24,
+      },
+      {
+        "color": "#010a1a",
+      },
+      undefined,
+      {
+        "fontFamily": "Inter-Bold",
+      },
+      null,
+    ]
+  }
+>
+  Bold text
+</Text>
+`;

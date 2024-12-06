@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputLabel Component renders correctly with label text 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Inter-Regular",
+        "fontSize": 16,
+        "lineHeight": 24,
+      },
+      {
+        "color": "#010a1a",
+      },
+      [
+        {
+          "color": "#4E5158",
+          "fontSize": 14,
+          "lineHeight": 17,
+          "marginBottom": 8,
+        },
+        {
+          "color": "#1B1C20",
+        },
+      ],
+      null,
+      null,
+    ]
+  }
+>
+  Test Label
+</Text>
+`;

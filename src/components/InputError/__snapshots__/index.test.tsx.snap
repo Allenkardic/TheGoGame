@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputError Component renders correctly with error message 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Inter-Regular",
+        "fontSize": 16,
+        "lineHeight": 24,
+      },
+      {
+        "color": "#010a1a",
+      },
+      {
+        "color": "#E80808",
+        "fontSize": 12,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  Error message goes here
+</Text>
+`;

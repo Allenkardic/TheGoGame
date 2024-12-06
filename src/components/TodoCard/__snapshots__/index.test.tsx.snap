@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoCard Component renders correctly with all props 1`] = `
+<View
+  style={
+    {
+      "borderColor": "#BDBDBD",
+      "borderRadius": 12,
+      "borderStyle": "solid",
+      "borderWidth": 1,
+      "marginBottom": 24,
+      "marginHorizontal": 24,
+      "paddingHorizontal": 12,
+      "paddingVertical": 24,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontFamily": "Inter-Regular",
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        {
+          "color": "#010a1a",
+        },
+        undefined,
+        {
+          "fontFamily": "Inter-Medium",
+        },
+        {
+          "fontSize": 18,
+          "lineHeight": 24,
+        },
+      ]
+    }
+  >
+    Sample Todo
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "fontFamily": "Inter-Regular",
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        {
+          "color": "#36454f",
+        },
+        {
+          "marginBottom": 12,
+          "marginTop": 24,
+        },
+        null,
+        {
+          "fontSize": 14,
+          "lineHeight": 21,
+        },
+      ]
+    }
+  >
+    This is a sample todo item.
+  </Text>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginTop": 24,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "Inter-Regular",
+            "fontSize": 16,
+            "lineHeight": 24,
+          },
+          {
+            "color": "#6D6E71",
+          },
+          undefined,
+          null,
+          {
+            "fontSize": 14,
+            "lineHeight": 21,
+          },
+        ]
+      }
+    >
+      Fri Dec 06 2024
+    </Text>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        onPress={[MockFunction]}
+        selectable={false}
+        style={
+          [
+            {
+              "color": "#139E5C",
+              "fontSize": 20,
+            },
+            {
+              "alignSelf": "flex-end",
+            },
+            {
+              "fontFamily": "Feather",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            {},
+          ]
+        }
+      >
+        
+      </Text>
+      <Text
+        allowFontScaling={false}
+        onPress={[MockFunction]}
+        selectable={false}
+        style={
+          [
+            {
+              "color": "#E80808",
+              "fontSize": 20,
+            },
+            [
+              {
+                "alignSelf": "flex-end",
+              },
+              {
+                "marginLeft": 24,
+              },
+            ],
+            {
+              "fontFamily": "Feather",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;

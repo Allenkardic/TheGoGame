@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component applies custom styles 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#031a61",
+        "borderRadius": 30,
+        "borderWidth": 2,
+        "overflow": "hidden",
+      },
+      {
+        "backgroundColor": "blue",
+      },
+    ]
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 30,
+          "height": 60,
+          "justifyContent": "center",
+          "paddingVertical": 2,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "Inter-Regular",
+            "fontSize": 16,
+            "lineHeight": 24,
+          },
+          {
+            "color": "#010a1a",
+          },
+          {
+            "color": "#FFFFFF",
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      Styled Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Button Component renders correctly with default props 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#031a61",
+        "borderRadius": 30,
+        "borderWidth": 2,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 30,
+          "height": 60,
+          "justifyContent": "center",
+          "paddingVertical": 2,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "Inter-Regular",
+            "fontSize": 16,
+            "lineHeight": 24,
+          },
+          {
+            "color": "#010a1a",
+          },
+          {
+            "color": "#FFFFFF",
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      Click Me
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Button Component renders spinner when isSubmitting is true 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#031a61",
+        "borderRadius": 30,
+        "borderWidth": 2,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": true,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 30,
+          "height": 60,
+          "justifyContent": "center",
+          "paddingVertical": 2,
+        },
+      ]
+    }
+  >
+    <ActivityIndicator
+      color="white"
+      size="small"
+      style={
+        [
+          {
+            "marginBottom": -4,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</View>
+`;
