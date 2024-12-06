@@ -6,7 +6,6 @@ import Icon from 'react-native-vector-icons/Feather';
 import {Colors, Spacing, Sizes} from '../../utils';
 
 function TodoCard({
-  id,
   title,
   body,
   date,
@@ -23,9 +22,9 @@ function TodoCard({
       </Text>
       <View style={styles.bottomItem}>
         <Text color="lightText" fontSize="small">
-          {date}
+          {new Date(date)?.toDateString()}
         </Text>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <View style={styles.iconContainer}>
           <Icon
             style={styles.icon}
             name="edit-3"
@@ -66,6 +65,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   icon: {
     alignSelf: 'flex-end',

@@ -77,7 +77,7 @@ function Home() {
       await fetchGetTodo();
     }
     getApi();
-  }, [isFocused, refreshing]);
+  }, [refreshing]);
 
   return (
     <Screen noKeyboardAvoidingView>

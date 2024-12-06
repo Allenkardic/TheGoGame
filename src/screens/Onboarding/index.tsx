@@ -8,7 +8,7 @@ import {
   ParamListBase,
 } from '@react-navigation/native';
 import {Input, Button, Screen} from '../../components';
-import {Spacing, Routes, asyncStore} from '../../utils';
+import {Spacing, Routes} from '../../utils';
 import {setUserName} from '../../api';
 
 const {HOME} = Routes.stack;
@@ -38,7 +38,6 @@ function Onboarding() {
             const {userName} = values;
             try {
               setUserName(userName);
-              await asyncStore('username', userName);
               navigation.navigate(HOME);
             } catch (e) {
               if (e instanceof Error) {
