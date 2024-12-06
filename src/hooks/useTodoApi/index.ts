@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import Toast from 'react-native-toast-message';
 import api from '../../api';
 import {
@@ -6,6 +6,8 @@ import {
   ITodoAPI,
   ToDoCardProps,
 } from '../../components/TodoCard/interfaces';
+
+// GET TODO API
 const useGetTodo = () => {
   const [loading, setLoading] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -51,6 +53,7 @@ const useGetTodo = () => {
   return {loading, isSuccessful, error, data, getTodoApi};
 };
 
+// DELETE TODO API
 const useDeleleTodo = () => {
   const [loading, setLoading] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -90,6 +93,7 @@ const useDeleleTodo = () => {
   return {loading, isSuccessful, error, data, deleteTodoApi};
 };
 
+// UPDATE TODO API
 const useUpdateTodo = () => {
   const [loading, setLoading] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
