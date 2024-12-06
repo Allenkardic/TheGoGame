@@ -5,6 +5,7 @@ import {Home, AddTodo, UpdateTodo, Onboarding} from '../screens';
 import {Text, NavigationIcon} from '../components';
 import {TextProps} from '../components/Typography/interfaces';
 import {RootStackParamList} from './interfaces';
+import {deleteUserName} from '../api';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -13,7 +14,11 @@ const renderLeftNavigationIcon = (navigation: {goBack: () => void}) => {
 };
 
 const renderLogoutNavigationIcon = (navigation: {goBack: () => void}) => {
-  return <NavigationIcon name="power" onPress={() => navigation.goBack()} />;
+  const handleDeleteUser = async () => {
+    await deleteUserName();
+    navigation.goBack();
+  };
+  return <NavigationIcon name="power" onPress={handleDeleteUser} />;
 };
 
 const renderHeaderTitle = (
