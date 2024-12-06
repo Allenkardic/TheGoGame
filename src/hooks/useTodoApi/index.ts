@@ -100,9 +100,17 @@ const useUpdateTodo = () => {
     setLoading(true);
 
     try {
-      const response = await api.put(`todo/:${id}`, {payload});
+      const response = await api.put(`todo/${id}`, payload);
       setData(response.data);
       setIsSuccessful(true);
+      setTimeout(() => {
+        Toast.show({
+          type: 'success',
+          autoHide: true,
+          text1: 'Todo updated successfully',
+          text2: 'Your data was updated successfully',
+        });
+      }, 1000);
       return Promise.resolve({
         data: response,
       });

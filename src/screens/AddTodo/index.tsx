@@ -32,6 +32,7 @@ function AddTodo() {
           // enableReinitialize={true}
           onSubmit={async values => {
             const response = await createTodoApi(values);
+
             if (response) {
               navigation.goBack();
             }

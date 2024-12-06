@@ -1,19 +1,28 @@
 import {useState} from 'react';
 import {View, ScrollView, StyleSheet} from 'react-native';
 import * as yup from 'yup';
-import {useRoute, RouteProp} from '@react-navigation/native';
+import {
+  useRoute,
+  RouteProp,
+  useNavigation,
+  NavigationProp,
+  ParamListBase,
+} from '@react-navigation/native';
 import {Formik} from 'formik';
 import {Input, Button, Screen} from '../../components';
 import {Spacing} from '../../utils';
 import {ToDoCardProps} from '../../components/TodoCard/interfaces';
 import {RootStackParamList} from '../../navigations/interfaces';
+import {useUpdateTodo} from '../../hooks/useTodoApi';
+
+type UpdateTodoRouteProp = RouteProp<RootStackParamList, 'UPDATETODO'>;
 
 function UpdateTodo() {
-  type UpdateTodoRouteProp = RouteProp<RootStackParamList, 'UPDATETODO'>;
-
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
   const route = useRoute<UpdateTodoRouteProp>();
   const {item: navParams} = route.params;
-  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const {updateTodoApi, loading} = useUpdateTodo();
 
   const schema = yup.object().shape({
     title: yup.string().required('Title is required'),
@@ -31,7 +40,10 @@ function UpdateTodo() {
           validationSchema={schema}
           // enableReinitialize={true}
           onSubmit={async values => {
-            navigation.navigate(ADDTODO);
+            const response = await updateTodoApi(navParams.id ?? '', values);
+            if (response) {
+              navigation.goBack();
+            }
           }}>
           {formikProps => {
             const {handleChange, touched, values, handleSubmit, errors} =
@@ -64,7 +76,7 @@ function UpdateTodo() {
                 <Button
                   text="Update Todo"
                   onPress={() => handleSubmit()}
-                  isSubmitting={isSubmitting}
+                  isSubmitting={loading}
                 />
               </>
             );
