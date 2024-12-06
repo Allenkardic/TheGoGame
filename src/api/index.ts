@@ -1,4 +1,5 @@
 import axios, {AxiosError, AxiosResponse} from 'axios';
+import {Platform} from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import Toast from 'react-native-toast-message';
 import {asyncStore, asyncGet, asyncRemove} from '../utils';
@@ -6,7 +7,11 @@ import {asyncStore, asyncGet, asyncRemove} from '../utils';
 interface ErrorResponse {
   message: string;
 }
-const BASE_URL = 'http://localhost:1234/';
+
+const BASE_URL =
+  Platform.OS === 'android'
+    ? 'http://10.0.2.2:1234/'
+    : 'http://localhost:1234/';
 
 const instance = axios.create({
   baseURL: BASE_URL,
