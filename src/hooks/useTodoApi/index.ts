@@ -60,10 +60,19 @@ const useDeleleTodo = () => {
   const deleteTodoApi = async (id: string) => {
     setLoading(true);
     try {
-      const response = await api.delete(`todo${id}`);
+      const response = await api.delete(`todo/${id}`);
       setData(response.data);
+      setIsSuccessful(true);
+      setTimeout(() => {
+        Toast.show({
+          type: 'success',
+          autoHide: true,
+          text1: 'Todo deleted successfully',
+          text2: 'Your data was deleted successfully',
+        });
+      }, 1000);
       return Promise.resolve({
-        data: response,
+        data: response.data,
       });
     } catch (e) {
       if (typeof e === 'string') {
