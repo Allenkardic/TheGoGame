@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import * as yup from 'yup';
 import {Formik} from 'formik';
@@ -16,8 +15,6 @@ const {HOME} = Routes.stack;
 function Onboarding() {
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const schema = yup.object().shape({
     userName: yup
       .string()
@@ -34,10 +31,12 @@ function Onboarding() {
           }}
           validationSchema={schema}
           // enableReinitialize={true}
-          onSubmit={async values => {
+          onSubmit={async (values, {resetForm}) => {
             const {userName} = values;
             try {
               setUserName(userName);
+              // Reset the form
+              resetForm();
               navigation.navigate(HOME);
             } catch (e) {
               if (e instanceof Error) {
@@ -63,11 +62,7 @@ function Onboarding() {
                   autoCapitalize="none"
                 />
 
-                <Button
-                  text="Next"
-                  onPress={() => handleSubmit()}
-                  isSubmitting={isSubmitting}
-                />
+                <Button text="Next" onPress={() => handleSubmit()} />
               </>
             );
           }}
