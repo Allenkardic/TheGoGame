@@ -1,4 +1,4 @@
-import {useEffect, useState, useCallback} from 'react';
+import {useState, useCallback} from 'react';
 import {FlatList, StyleSheet, Alert, RefreshControl} from 'react-native';
 import {
   useNavigation,
@@ -14,7 +14,6 @@ import {useGetTodo, useDeleleTodo} from '../../hooks/useTodoApi';
 const {ADDTODO, UPDATETODO} = Routes.stack;
 
 function Home() {
-  useEffect(() => {}, []);
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
   const [todoData, setTodoData] = useState<ToDoCardProps[]>([]);

@@ -55,7 +55,7 @@ const HomeStack = () => {
       <Stack.Screen
         name={ONBOARDING}
         component={Onboarding}
-        options={({navigation}) => ({
+        options={() => ({
           headerShown: true,
           headerTitle: props => renderHeaderTitle(props, 'Onboarding'),
         })}
