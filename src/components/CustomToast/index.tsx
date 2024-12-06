@@ -3,12 +3,40 @@ import {View, StyleSheet} from 'react-native';
 import Text from '../Typography';
 import Icon from 'react-native-vector-icons/Feather';
 import Toast, {BaseToastProps} from 'react-native-toast-message';
-import {Spacing} from '../../utils';
+import {Colors, Spacing} from '../../utils';
 
-/*
-  1. Create the config
-*/
 export const toastConfig = {
+  // success
+  success: (props: JSX.IntrinsicAttributes & BaseToastProps) => {
+    return (
+      <View style={styles.containerSuccess}>
+        <View style={styles.content}>
+          <View style={styles.firstContent}>
+            <View style={styles.checkIconSuccess}>
+              <Icon name="check" size={15} color={'white'} />
+            </View>
+            <View style={styles.textContainer}>
+              <Text weight="medium" fontSize="large" color="primary">
+                {props.text1}
+              </Text>
+              <Text fontSize="small" style={styles.text2}>
+                {props.text2}
+              </Text>
+            </View>
+          </View>
+
+          <Icon
+            size={20}
+            color="#4C75F2"
+            name="x-circle"
+            onPress={() => Toast.hide()}
+          />
+        </View>
+      </View>
+    );
+  },
+
+  // info
   info: (props: JSX.IntrinsicAttributes & BaseToastProps) => {
     return (
       <View style={styles.container}>
@@ -39,7 +67,6 @@ export const toastConfig = {
   },
 
   // error
-
   error: (props: JSX.IntrinsicAttributes & BaseToastProps) => {
     return (
       <View style={styles.containerError}>
@@ -91,6 +118,16 @@ const styles = StyleSheet.create({
     paddingBottom: Spacing.xxsmall,
   },
 
+  containerSuccess: {
+    marginHorizontal: Spacing.xxsmall,
+    backgroundColor: Colors.ghostWhite,
+    paddingVertical: Spacing.xxxsmall,
+    justifyContent: 'center',
+    borderRadius: 12,
+    paddingTop: Spacing.xxsmall,
+    paddingBottom: Spacing.xxsmall,
+  },
+
   content: {
     justifyContent: 'space-between',
     flexDirection: 'row',
@@ -108,6 +145,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  checkIconSuccess: {
+    width: 25,
+    height: 25,
+    borderRadius: 25 / 2,
+    backgroundColor: Colors.green,
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   checkIconError: {
     width: 25,
     height: 25,

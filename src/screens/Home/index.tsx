@@ -1,15 +1,14 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useCallback} from 'react';
 import {FlatList, StyleSheet, Alert, RefreshControl} from 'react-native';
 import {
   useNavigation,
   NavigationProp,
   ParamListBase,
-  useIsFocused,
+  useFocusEffect,
 } from '@react-navigation/native';
 import {Screen, TodoCard, AddIcon, EmptyList, Spinner} from '../../components';
 import {Colors, Routes, Spacing} from '../../utils';
 import {ToDoCardProps} from '../../components/TodoCard/interfaces';
-import {asyncGet} from '../../utils';
 import {useGetTodo, useDeleleTodo} from '../../hooks/useTodoApi';
 
 const {ADDTODO, UPDATETODO} = Routes.stack;
@@ -17,7 +16,6 @@ const {ADDTODO, UPDATETODO} = Routes.stack;
 function Home() {
   useEffect(() => {}, []);
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
-  const isFocused = useIsFocused();
 
   const [todoData, setTodoData] = useState<ToDoCardProps[]>([]);
   const [refreshing, setRefreshing] = useState(false);
@@ -29,9 +27,9 @@ function Home() {
     navigation.navigate(ADDTODO);
   };
 
-  const handleUpdateTodo = (item: ToDoCardProps) => {
+  const handleUpdateTodo = useCallback((item: ToDoCardProps) => {
     navigation.navigate(UPDATETODO, {item});
-  };
+  }, []);
 
   const deleteTodo = async (id: string) => {
     const response = await deleteTodoApi(id);
@@ -72,12 +70,14 @@ function Home() {
     }
   };
 
-  useEffect(() => {
-    async function getApi() {
-      await fetchGetTodo();
-    }
-    getApi();
-  }, [refreshing]);
+  useFocusEffect(
+    useCallback(() => {
+      async function getApi() {
+        await fetchGetTodo();
+      }
+      getApi();
+    }, [refreshing]),
+  );
 
   return (
     <Screen noKeyboardAvoidingView>
@@ -112,7 +112,7 @@ function Home() {
               refreshing={refreshing}
               onRefresh={onRefresh}
               colors={[Colors.primary]} // Android
-              tintColor={Colors.primary} // iOS />
+              tintColor={Colors.primary} // iOS
             />
           }
           keyExtractor={(item, index) => item.id ?? index.toString()}
