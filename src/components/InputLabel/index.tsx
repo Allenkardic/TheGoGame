@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, memo} from 'react';
 import {StyleSheet} from 'react-native';
 import {Colors} from '../../utils';
 import Text from '../Typography';
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default InputLabel;
+export default memo(InputLabel);

@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, memo} from 'react';
 import {Text as RNText, StyleSheet} from 'react-native';
 import {Colors} from '../../utils';
 import {TextProps, FontWeight, FontSize} from './interfaces';
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Text;
+export default memo(Text);

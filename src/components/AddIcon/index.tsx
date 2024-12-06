@@ -1,6 +1,7 @@
+import React, {memo} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import {Pressable, StyleSheet, Platform} from 'react-native';
-import {Spacing, Colors} from '../../utils';
+import {Colors} from '../../utils';
 import {AddIconProps} from './interfaces';
 
 function AddIcon({onPress, style}: AddIconProps) {
@@ -31,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddIcon;
+export default memo(AddIcon);

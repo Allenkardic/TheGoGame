@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useCallback, useEffect, useMemo} from 'react';
+import React, {useCallback, useEffect, useMemo, memo} from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
@@ -13,7 +13,6 @@ import {
 import {useIsFocused} from '@react-navigation/native';
 import {IScreenProps} from './interfaces';
 import {Colors, Spacing} from '../../utils';
-import Text from '../Typography';
 
 /**
  * This component is used to configure screens.
@@ -132,5 +131,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// export Screen component as the modules default
-export default Screen;
+export default memo(Screen);

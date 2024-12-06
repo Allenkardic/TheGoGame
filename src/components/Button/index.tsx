@@ -1,3 +1,4 @@
+import React, {memo} from 'react';
 import {StyleSheet, View, Pressable} from 'react-native';
 import {IButtonProps} from './interfaces';
 import Spinner from '../Spinner';
@@ -52,5 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// export Button component as the modules default
-export default Button;
+export default memo(Button);

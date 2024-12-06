@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {ActivityIndicator, StyleSheet} from 'react-native';
 import {Colors} from '../../utils';
 import {SpinnerProps} from './interfaces';
@@ -25,9 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-/**
- * Set spinner default props, we want to
- * default to a small light theme spinner always
- */
-
-export default Spinner;
+export default memo(Spinner);

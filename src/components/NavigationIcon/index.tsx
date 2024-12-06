@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 import {Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
@@ -12,4 +12,4 @@ function NavigationIcon({onPress, name}: NavigationIconProps) {
   );
 }
 
-export default NavigationIcon;
+export default memo(NavigationIcon);
