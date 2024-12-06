@@ -1,5 +1,4 @@
-import {useState} from 'react';
-import {View, ScrollView, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import * as yup from 'yup';
 import {
   useRoute,
@@ -11,7 +10,6 @@ import {
 import {Formik} from 'formik';
 import {Input, Button, Screen} from '../../components';
 import {Spacing} from '../../utils';
-import {ToDoCardProps} from '../../components/TodoCard/interfaces';
 import {RootStackParamList} from '../../navigations/interfaces';
 import {useUpdateTodo} from '../../hooks/useTodoApi';
 
