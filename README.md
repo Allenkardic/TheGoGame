@@ -38,8 +38,6 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-# Project Structure
-
 ```
 
 ![Android](./screenshots/AddTodoScreen_Android.png)
@@ -47,6 +45,8 @@ This is one way to run your app — you can also run it directly from within And
 ![IOS](./screenshots/HomeScreen_IOS.png)
 
 ```
+
+## Project Structure
 
 ```
 
