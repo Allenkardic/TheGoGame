@@ -40,4 +40,4 @@ This is one way to run your app — you can also run it directly from within And
 
 ![Android](./screenshots/AddTodoScreen_Android.png)
 ![Home Android](./screenshots/HomeScreen_Android.png)
-![IOS](./screenshots/HomeScreen_IOS.png){:width="100" }
+![IOS](./screenshots/HomeScreen_IOS.png)
