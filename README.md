@@ -45,9 +45,3 @@ This is one way to run your app — you can also run it directly from within And
 ![IOS](./screenshots/HomeScreen_IOS.png)
 
 ```
-
-## Project Structure
-
-```
-
-```
