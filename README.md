@@ -42,6 +42,8 @@ This is one way to run your app — you can also run it directly from within And
 ![Home Android](./screenshots/HomeScreen_Android.png)
 ![IOS](./screenshots/HomeScreen_IOS.png)
 
+## Project Structure
+
 ```
 
 ```
